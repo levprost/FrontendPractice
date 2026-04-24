@@ -75,9 +75,23 @@ a{
     &[class] {
         text-decoration: none;
     }
-    :focus-visible{
-        outline: rem(2) dashed var(--color-light);
-        outline-offset: rem(4);
-        transition-duration: 0s !important;
+}
+:focus-visible{
+    outline: rem(2) dashed var(--color-light);
+    outline-offset: rem(4);
+    transition-duration: 0s !important;
+}
+
+a,
+button {
+    &[aria-lable] {
+        position: relative;
+
+        &::before{
+            @include abs-center;
+            @include square(rem(44));
+
+            content: '';
+        }
     }
 }
