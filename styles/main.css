@@ -288,6 +288,10 @@ svg * {
   }
 }
 
+html.is-lock {
+  overflow: hidden;
+}
+
 body {
   font-size: clamp(1.5rem, 1.6208677686rem + -0.4958677686vw, 1.125rem);
   font-family: var(--font-family-base);
@@ -486,7 +490,7 @@ button[aria-lable]::before {
 .burger-button.is-active .burger-button__line:first-child {
   rotate: 45deg;
   transform-origin: 0;
-  translate: 0.25em -0.1em;
+  translate: 0.2em -0.1em;
 }
 .burger-button.is-active .burger-button__line:nth-child(2) {
   rotate: -45deg;
@@ -506,6 +510,20 @@ button[aria-lable]::before {
   width: 55%;
 }
 
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 6.25rem 12.5rem;
+}
+@keyframes scrolling-header {
+  to {
+    box-shadow: 0 0 1rem 0 var(--color-dark-40);
+  }
+}
 .header__promo {
   padding-block: 1.25rem;
   text-align: center;
