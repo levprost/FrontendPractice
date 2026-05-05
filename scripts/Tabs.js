@@ -13,7 +13,7 @@ class Tabs{
 
     stateAttributes = {
         ariaSelected: 'aria-selected',
-        tabIndex: 'tab-index',
+        tabIndex: 'tabindex',
     }
 
     constructor(rootElement) {
@@ -38,7 +38,7 @@ class Tabs{
             set: (target, prop, value) => {
                 target[prop] = value
 
-                this.updateUI
+                this.updateUI()
 
                 return true
             },
@@ -82,8 +82,7 @@ class Tabs{
         ? 0
         : this.state.activeTabIndex + 1
 
-
-    this.activateTab(newTabIndex)
+        this.activateTab(newTabIndex)
     }
 
     firstTab = () => {
@@ -97,7 +96,6 @@ class Tabs{
 
     onButtonClick(buttonIndex){
         this.state.activeTabIndex = buttonIndex
-        
     }
 
     onKeyDown = () => {
