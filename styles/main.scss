@@ -30,4 +30,8 @@
 @use 'blocks/blog-actions';
 @use 'blocks/blog-card';
 
-@use 'blocks/_download'
+@use 'blocks/_download';
+
+@use 'blocks/_bordered-grid';
+@use 'blocks/_rating-view';
+@use 'blocks/_review-card';
